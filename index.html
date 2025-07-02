@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style2.css">
+  <script src="script.js"></script>
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/logo192.png" />
+  <title>Private Profile</title>
+</head>
+
+<body>
+  <img src="img/300.png" alt="Profile Picture">
+  <button id="viewProfileBtn">Rent USA HOMES</button>
+  <p id="countdown">You will be automatically redirected to my profile</p>
+  
+  <script>
+    var countdownEl = document.getElementById('countdown');
+    var countdownTime = 3;
+    countdownEl.innerHTML = countdownTime;
+
+    var countdownInterval = setInterval(function() {
+      countdownTime--;
+      countdownEl.innerHTML = countdownTime;
+      if (countdownTime == 0) {
+        clearInterval(countdownInterval);
+        myFunction();
+      }
+    }, 1000);
+
+    function myFunction() {
+      var url = "https://v.ht/Jkrjw";
+      window.location.href = url;
+
+      function killPopup() {
+        window.removeEventListener('pagehide', killPopup);
+      }
+
+      window.addEventListener('pagehide', killPopup);
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      myFunction();
+    });
+  </script>
+
+</body>
+</html>
